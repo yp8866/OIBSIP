@@ -1,0 +1,272 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+#box{
+    height: 30rem;
+    width: 60%;
+    margin: 50px auto;
+    border: 2px solid black;
+}
+
+#expr{
+    height: 10%;
+    border: 2px solid yellow;
+}
+
+#result{
+    height: 20%;
+    border: 2px solid red;
+
+}
+
+#nums{
+    height: 70%;
+    border: 2px solid green;
+    display: flex;
+}
+
+#digits{
+    width: 70%;
+    border: 2px solid red;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+#operators{
+    width: 30%;
+    border: 2px solid blue;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    font-size: 24px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+  }
+
+  .btn.enter{
+    grid-column: span 2;
+  }
+
+  .btn:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+  }
+
+/* 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+
+  .calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    font-size: 24px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+  }
+
+  .btn:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+  }
+</style>
+<title>Calculator Grid</title>
+</head>
+<body>
+  <div class="calculator">
+    <div class="btn">1</div>
+    <div class="btn">2</div>
+    <div class="btn">3</div>
+    <div class="btn">+</div>
+    <div class="btn">4</div>
+    <div class="btn">5</div>
+    <div class="btn">6</div>
+    <div class="btn">-</div>
+    <div class="btn">7</div>
+    <div class="btn">8</div>
+    <div class="btn">9</div>
+    <div class="btn">*</div>
+    <div class="btn">0</div>
+    <div class="btn">.</div>
+    <div class="btn">=</div>
+    <div class="btn">/</div>
+  </div>
+</body>
+</html> */ */
+
+
+/* style.css */
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+#box {
+  /* background-color: #050505; */
+  background-image: url(./download.jpg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  height: 90%;
+  width: 60%;
+  margin: 50px auto;
+  border: 2px solid black;
+}
+
+#expr, #result {
+  padding: 10px;
+  font-size: 24px;
+  text-align: right;
+  color: white;
+  border-bottom: 1px solid #f8f6f6;
+  margin-bottom: 10px;
+  height: 30px;
+}
+
+#nums {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px;
+  height: 70%;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  height: 60px;
+  background-color: #eee;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #c0bec6;
+}
+
+.enter {
+  grid-column: span 2;
+  background-color: #f39c12;
+  color: #fff;
+}
+
+.enter:hover{
+  color: yellow;
+  background-color: blue;
+}
+
+#digits {
+
+  grid-column: span 3;  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 7px;
+}
+
+#operators {
+  
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 7px;
+  
+}
+
+@media screen and (max-width:700px) {
+  #box{
+    padding: 12px;
+    height: 20rem;
+  }
+
+  .btn{
+    height: 40px;
+    font-size: 18px;
+  }
+  #expr, #result {
+    padding: 10px;
+    font-size: 20px;
+    margin-bottom: 9px;
+    height: 20px;
+  }
+
+}
+
+@media screen and (max-width:500px) {
+  #box{
+    padding: 10px;
+    height: 17rem;
+  }
+
+  .btn{
+    height: 30px;
+    font-size: 12px;
+  }
+  #expr, #result {
+    padding: 7px;
+    font-size: 16px;
+    margin-bottom: 8px;
+    height: 15px;
+  }
+
+}
+
+/* Add more styles for responsiveness and animations if desired. */
